@@ -112,7 +112,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
 
 
-const value = prompt('Введіть кількість хвилин');
+/*const value = prompt('Введіть кількість хвилин');
 const minutes = parseInt(value, 10);
 if (!isNaN(minutes)) { // Перевіряємо, чи введене значення – число
     const hours = Math.floor(minutes / 60); // Знаходимо повні години
@@ -120,7 +120,7 @@ if (!isNaN(minutes)) { // Перевіряємо, чи введене значе
     alert(`${hours} год : ${remainingMinutes} хв`); // Виводимо результат
 } else {
     alert('Будь ласка, введіть правильне число хвилин!');
-}
+}*/
 
 
 
@@ -269,6 +269,9 @@ if (!isNaN(minutes)) { // Перевіряємо, чи введене значе
 // fizzBuzz(20);
 // fizzBuzz(50);
 // fizzBuzz(28);
+
+
+
 
 
 
