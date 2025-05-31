@@ -108,15 +108,17 @@ console.log(caclculateAverage(someArr));
 // якщо функція отримує масив - поверніть з функції найменше число,
 // в іншому випадку - поверніть 'Sory, it is not an array!'.
 
-// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
-// function findSmallestNumber(numbers){
-//     for(const number of numbers){
-//       if(Array.isArray(numbers)){
-//         return Math.min(...numbers[number]);
-//       }
-//     }
-// }
-
+ /*const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+ function findSmallestNumber(numbers){
+     if(!Array.isArray(numbers)){
+       return "Sorry, it is not an array!"; 
+       }
+        return Math.min(...numbers);
+ }
+ console.log(findSmallestNumber(numbers)); // 2
+console.log(findSmallestNumber("Not an array")); // "Sorry, it is not an array!"
+console.log(findSmallestNumber(12345)); // "Sorry, it is not an array!"
+*/
 
 //Завдання 6:
 
@@ -128,6 +130,18 @@ console.log(caclculateAverage(someArr));
 // console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
 
 
+/*function findLongestWord(string){
+const newArreys =  string.split(" ");
+let arrLength = "";
+for(const newArrey of newArreys){
+if(newArrey.length > arrLength.length)
+   arrLength = newArrey;
+}
+ 
+    return arrLength;
+}
+console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+*/
 
 //Завдання 7:
 
@@ -167,20 +181,19 @@ console.log(caclculateAverage(someArr));
 // збережіть його результат в змінній sum.
 // Якщо об'єкт salaries пустий, то результат має бути 0
 
-// const salaries = {
-//     Mango: 100,
-//     Poly: 160,
-//      Ajax: 1470,
-//    };
-//    let sum = 0;
-// for(const salarie of salaries){
-//     if(salaries.length !== 0){
-// sum += salaries[salarie];
-
-//     }         
-// }
-// console.log(sum);
-
+ /*const salaries = {
+     Mango: 100,
+     Poly: 160,
+      Ajax: 1470,
+    };
+    let sum = 0;
+if (Object.keys(salaries).length !== 0) {
+    for (const value of Object.values(salaries)) {
+        sum += value;
+    }
+}
+ console.log(sum);
+*/
 
 //Завдання 9:
 
@@ -193,34 +206,34 @@ console.log(caclculateAverage(someArr));
 // Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
 // методи sum і mult мають повертати рядок 'No such propeties'
 
-// const calculator = {
-//   read(a, b){
-//     this.firstValue = a;
-//     this.secondValue = b;
-//   } , 
-//   sum(){
-//      if(this.exist()){
-//       return this.firstValue + this.secondValue;
-//      }
-//     return 'No such propeties';
+ /*const calculator = {
+   read(a, b){
+     this.firstValue = a;
+     this.secondValue = b;
+   } , 
+   sum(){
+      if(this.exist()){
+       return this.firstValue + this.secondValue;
+      }
+     return 'No such propeties';
   
-//   },
-//   mult(){
-//     if(this.exist()){
-//       return this.firstValue * this.secondValue;
-//     }
-//     return 'No such propeties';
-//   },
-//   exist(){
+   },
+   mult(){
+     if(this.exist()){
+       return this.firstValue * this.secondValue;
+     }
+     return 'No such propeties';
+   },
+   exist(){
 
-//   return  this.firstValue !== undefined && this.secondValue !== undefined;
-//   } 
+   return  this.firstValue !== undefined && this.secondValue !== undefined;
+   } 
   
-// }
-// console.log(calculator.read(6, 4));
-// console.log(calculator.sum());
-// console.log(calculator.mult());
-
+ }
+ console.log(calculator.read(6, 4));
+ console.log(calculator.sum());
+ console.log(calculator.mult());
+*/
 
 //Завдання 10:
 
@@ -232,29 +245,39 @@ console.log(caclculateAverage(someArr));
 // Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою 
 // назвою фрукта, це також треба урахувати.
 
-//  const fruits = [
-//      { name: "Яблуко", price: 45, quantity: 7 },
-//      { name: "Апельсин", price: 60, quantity: 4 },
-//      { name: "Банан", price: 125, quantity: 8 },
-//      { name: "Груша", price: 350, quantity: 2 },
-//      { name: "Виноград", price: 440, quantity: 3 },
-//      { name: "Банан", price: 125, quantity: 3 },
-//    ];
-// function calcTotalPrice(fruits, fruitName){
-//    let sum = 0;
-//    for(const fruit of fruits){
-//     if(fruit.name === fruitName){
-//         sum += fruit.price * fruit.quantity;
-//     }
-//    }
-//    return `${sum} `;
-//    }
-//    console.log(calcTotalPrice(fruits, "Банан"));
-
+ /* const fruits = [
+      { name: "Яблуко", price: 45, quantity: 7 },
+      { name: "Апельсин", price: 60, quantity: 4 },
+      { name: "Банан", price: 125, quantity: 8 },
+      { name: "Груша", price: 350, quantity: 2 },
+      { name: "Виноград", price: 440, quantity: 3 },
+      { name: "Банан", price: 125, quantity: 3 },
+    ];
+ function calcTotalPrice(fruits, fruitName){
+    let sum = 0;
+    let count = 0;
+    let price = 0;
+    for(const fruit of fruits){
+     if(fruit.name === fruitName){
+         sum += fruit.price * fruit.quantity;
+         count += fruit.quantity;
+         price = fruit.price;
+     }
+    }
+    return `${fruitName} : ${count} шт. * ${price} гр. до сплати ${sum} `;
+    }
+    console.log(calcTotalPrice(fruits, "Банан")); //Банан : 11 шт. * 125 гр. до сплати 1375 
+*/
 
    //Завдання 11:
 // Створіть телефонну книгу - об'єкт phonebook,
 // у якого є властивість contacts (список контактів)
+const phonebook = {
+  contacts: [],
+  add(data){
+    newContact
+  },
+}
 // та методи управління книгою:
 // add(data) - приймає об'єкт data, де передається
 // name і email, category може передаватись чи ні,
