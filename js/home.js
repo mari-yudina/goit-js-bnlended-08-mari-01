@@ -41,7 +41,7 @@ const worstScore = Math.min(...allScores);
 console.log(allScores, bestScore, worstScore);
 */
 
-const defaultSettings = {
+/*const defaultSettings = {
   theme: "light",
   public: true,
   withPassword: false,
@@ -58,3 +58,4 @@ const finalSettings = {
 ...defaultSettings, ...overrideSettings
 };
 console.log(finalSettings);
+*/

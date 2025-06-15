@@ -272,12 +272,6 @@ if (Object.keys(salaries).length !== 0) {
    //Завдання 11:
 // Створіть телефонну книгу - об'єкт phonebook,
 // у якого є властивість contacts (список контактів)
-const phonebook = {
-  contacts: [],
-  add(data){
-    newContact
-  },
-}
 // та методи управління книгою:
 // add(data) - приймає об'єкт data, де передається
 // name і email, category може передаватись чи ні,
@@ -294,17 +288,19 @@ const phonebook = {
 // filtered(category) - фільтрує контактів по обраній категорії (друзі, робота і т.д.);
 // delete(name) - видаляє контакт з заданим ім'ям;
 // updateName(oldName, newName) - змінює ім'я контакта;
-// const phonebook = {
-//     contacts: [],
-//     add(data) {},
-//     list() {},
-//     filtered(category) {},
-//     delete(name) {},
-//     updateName(oldName, newName) {},
-//     generateId() {
-//       return "#" + Math.random().toString(36).substr(2, 9);
-//     },
-//     getDate() {
-//       return Date.now();
-//     },
-//   };
+ /*const phonebook = {
+     contacts: [],
+     add(data) {
+     },
+     list() {},
+     filtered(category) {},
+     delete(name) {},
+     updateName(oldName, newName) {},
+     generateId() {
+       return "#" + Math.random().toString(36).substr(2, 9);
+     },
+     getDate() {
+       return Date.now();
+     },
+   };
+   */
