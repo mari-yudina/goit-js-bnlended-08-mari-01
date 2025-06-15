@@ -13,7 +13,7 @@ console.log(newNumbers); //(5) [1, 4, 9, 16, 25]
 const getDoubleNumbers =  (array) => array.map(num => num ** 2);
 console.log(getDoubleNumbers(numbers)); //(5) [1, 4, 9, 16, 25]
 */
-
+//----------------------------------------------------------
 // Завдання 2: flatMap()
 
 // Дано масив об'єктів. Створіть новий масив, що містить всі значення
@@ -37,7 +37,7 @@ console.log(newData); //(9) [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const getDoubleNumbers =  (array) => array.flatMap(dat => dat.values);
 console.log(getDoubleNumbers(data));//(9) [1, 2, 3, 4, 5, 6, 7, 8, 9]
 */
-
+//----------------------------------------------------------
 // Завдання 3:  some()
 
 // Дано масив об'єктів.
@@ -61,7 +61,7 @@ console.log(newPeople); //true
 const getDoubleNumbers =  (array) => array.some(person => person.age < 20);
 console.log(getDoubleNumbers(people)); //true
 */
-
+//----------------------------------------------------------
 // Завдання 4:  every()
 
 // Дано масив чисел [2, 4, 6, 8, 10].
@@ -76,7 +76,7 @@ console.log(getDoubleNumbers(people)); //true
 const getDoubleNumbers =  (array) => array.every(num => num % 2 === 0);
 console.log(getDoubleNumbers(numbers)); //true
 */
-
+//----------------------------------------------------------
 // Завдання 5: find()
 
 // Знайдіть перше непарне число
@@ -97,7 +97,7 @@ const getDoubleNumbers =  (array) => {
 };
 console.log(getDoubleNumbers(numbers)); // 1
 */
-
+//----------------------------------------------------------
 // Завдання 6:  toSorted()
 
 // Відсортуйте масив чисел [4, 2, 5, 1, 3]
@@ -112,7 +112,7 @@ console.log(getDoubleNumbers(numbers)); // 1
 const getDoubleNumbers =  (array) => array.toSorted((a, b) => a - b);
 console.log(getDoubleNumbers(numbersArray)); //(5) [1, 2, 3, 4, 5]
 */
-
+//----------------------------------------------------------
 // Завдання 7:  toSorted()
 
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"]
@@ -128,7 +128,7 @@ const newStringArray = stringArray.toSorted((a, b) => a.localeCompare(b));
 const getDoubleNumbers =  (array) => array.toSorted((a, b) => a.localeCompare(b));
 console.log(getDoubleNumbers(stringArray));
 */
-
+//----------------------------------------------------------
 // Завдання 8:  toSorted()
 
 //  Відсортуйте масив об'єктів за віком у порядку зростання.
@@ -158,7 +158,7 @@ console.log(getDoubleNumbers(users));
  // {name: "John", age: 27}, 
  // {name: "Jane", age: 31}]
  */
-
+//----------------------------------------------------------
 // Завдання 9:  filter()
 
 // Дано масив об'єктів.
@@ -185,7 +185,7 @@ const newUser = user.filter(use => use.age > 20);
 console.log(getDoubleNumbers(user));
 //[{name: "John", age: 27}, {name: "Jane", age: 31}]
 */
-
+//----------------------------------------------------------
 // Завдання 10:   reduce()
 
 // Дано масив чисел [1, 2, 3, 4, 5].
@@ -200,7 +200,7 @@ console.log(getDoubleNumbers(user));
 const getDoubleNumbers =  (array) => array.reduce((total, num) => total += num, 0);
 console.log(getDoubleNumbers(numbers)); // 15
 */
-
+//----------------------------------------------------------
 //Завдання 10-A:  flatMap(),  filter(), includes()
 
 // 1. Створити функцію getNames(array), яка приймає масив об'єктів
@@ -290,6 +290,7 @@ console.log(getUsersWithGender(tweets, "female"));
 // у кого є тег "js" (властивість tags)
 // 3. Написати функцію getUsersWithGender(array, gender), яка приймає масив і стать
 // і повертає масив імен користувачів по цій статі (властивість gender)
+//----------------------------------------------------------
 
 //Завдання 10-B: !!!
 
@@ -310,7 +311,7 @@ console.log(reverseArray(newData));
 // (6) [2, 11, 48, 13, 26, 10]
 */
 
-
+//----------------------------------------------------------
 // Завдання 11:
 
 // Розроби клас Calculator, який дозволяє виконувати арифметичні
@@ -386,7 +387,7 @@ console.log(calculator);
 calculator.number(10).add(5).substruct(3).divide(2).multiply(4); // 24
 console.log(calculator.getResult());
 */
-
+//----------------------------------------------------------
 // Завдання 12: 
 
 // Напиши клас Client який створює об'єкт з властивостями login email.
@@ -481,7 +482,7 @@ client2.email = "valid@mail.com"; // ✅ Email успешно изменен
 client2.login = "Al"; // ❌ Ошибка (логин короче 3 символов)
 client2.login = "Alex"; // ✅ Логин успешно изменен
 */
-
+//----------------------------------------------------------
 // Завдання 13:
 //  Наслідування у класах!
 // Cтворіть клас `Person`, який містить наступні властивості:
@@ -568,7 +569,7 @@ const employee = new Employee(user, userAdd);
 console.log(employee);
 //Employee {name: 'Mary', age: 25, gender: 'mail', email: 'Mary@ukr.net', salary: 5000, …}
 */
-
+//----------------------------------------------------------
 // Завдання 13-A:
 // Напиши класс Notes який управляє коллекцієй нотаток у
 // властивості items.
