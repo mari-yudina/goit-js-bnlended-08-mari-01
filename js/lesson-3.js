@@ -638,3 +638,71 @@ note.removeNote('Note1');
 // Note deleted: Note1
 note.getNotes();
 */
+
+//----------------------------------------------------------
+// Завдання 13-A:
+
+// Додайте до класу наступні властивості та методи.Admin
+
+// Публічна властивість для зберігання чорного списку адрес
+//  електронної пошти користувачів. Значенням за замовчуванням
+//   є порожній масив.blacklistedEmails
+// Публічний метод додавання електронної пошти до чорного списку.
+//  Метод повинен додавати значення параметру в масив, 
+//  що зберігається у властивості.blacklist(email)emailblacklistedEmails
+// Публічний метод перевірки, чи є електронний лист у чорному списку.
+//  Метод повинен перевіряти наявність значення параметра в масиві,
+//   що зберігається у властивості, і повертати або 
+//   .isBlacklisted(email)emailblacklistedEmailstruefalse
+// Після оголошення класу ми додали ініціалізацію екземпляра
+//  та виклики методів у порядку, в якому ваш код буде тестуватися. 
+//  Будь ласка, нічого там не змінюйте.
+
+/*
+ class User {
+   email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  static role = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  constructor(params) {
+    super(params.email);
+    this.access = params.access;
+    this.blacklistedEmails = [];
+  }
+  blacklist(email){
+    this.blacklistedEmails.push(email);
+  }
+   isBlacklisted(email) {
+    return this.blacklistedEmails.includes(email);
+  }
+}
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  access: Admin.role.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.access); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
+*/
