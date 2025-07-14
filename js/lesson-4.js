@@ -71,8 +71,60 @@ li.appendChild(h3);
 li.appendChild(p);
 const ul = document.querySelector('ul');
 ul.appendChild(li);
+
+const lastLi = ul.lastElementChild;
+const heading = lastLi.querySelector('h3');
+
+if (heading && heading.textContent === 'Властивість innerHTML') {
+  console.log('task-18 : Елемент успішно додано у список!', ul);
+} else {
+  console.warn('task-18 : Щось пішло не так…');
+}
+
 // 19 - зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
+const ulTwo = document.querySelector('ul');
+
+ulTwo.insertAdjacentHTML(
+  'beforeend',
+  `
+    <li class="task-list-item">
+      <h3>Властивість innerHTML</h3>
+      <p>
+        Ще один спосіб створити DOM-елементи і помістити їх в дерево — це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу.
+      </p>
+    </li>
+  `,
+);
+const lastItem = ul.lastElementChild;
+
+if (
+  lastItem &&
+  lastItem.querySelector('h3')?.textContent === 'Властивість innerHTML'
+) {
+  console.log(
+    'task-19 : Елемент успішно додано через insertAdjacentHTML!',
+    ulTwo,
+    ul,
+  );
+} else {
+  console.log('task-19 : Щось не так...');
+}
+
 // 20 - очисти список
+
+// 1 спосіб
+/*
+ listEl.innerHTML = '';
+ console.log('task-20 : Список успішно очищено!', ulTwo, ul);
+*/
+
+// 2 спосіб
+
+/*while (ul.firstChild) {
+  ul.removeChild(ul.firstChild);
+}
+console.log('task-20 : Всі елементи видалені по одному!');
+*/
 
 //Завдання 2:
 
@@ -82,7 +134,21 @@ ul.appendChild(li);
 // Парні числа повинні мати зелений фон (додати клас even),
 // Непарні числа - жовтий фон (додати клас odd).
 
-// const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+const divBox = document.querySelector('.number-container');
+const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+for (let i = 0; i <= 100; i++) {
+  const block = document.createElement('div');
+  const value = randomNumber();
+  block.textContent = value;
+  block.classList.add('number');
+  if (value % 2 === 0) {
+    block.classList.add('even');
+  } else {
+    block.classList.add('odd');
+  }
+  divBox.appendChild(block); //додаєм на сторінку
+  //console.log(block); //перевірка у косолі
+}
 
 //Завдання 3:
 
@@ -94,8 +160,9 @@ ul.appendChild(li);
 // 6 символів то додати клас `success`. Якщо ж символів менше аніж 6,
 // то клас `error`
 
-/*const input = document.querySelector('.js-username-input');
+const input = document.querySelector('.js-username-input');
 input.addEventListener('input', checkInputValue);
+input.addEventListener('blur', checkInputValue);
 
 function checkInputValue() {
   const inputValue = input.value.trim();
@@ -106,7 +173,89 @@ function checkInputValue() {
     input.classList.add(`error`);
     input.classList.remove(`success`);
   }
-}*/
+
+  input.addEventListener('blur', () => {
+    if (inputValue === '') {
+      input.style.outline = '3px solid red';
+    } else {
+      input.style.outline = '3px solid lime';
+    }
+  });
+}
+
+/*const form = document.querySelector('.js-form');
+const input = document.querySelector('.js-username-input');
+const checkbox = document.querySelector('.js-agree-checkbox');
+const span = document.querySelector('.js-user-name');
+
+// 1 - input event
+input.addEventListener('input', checkInput);
+
+// 2 - focus event
+input.addEventListener('focus', checkInput);
+
+// 3 - blur event
+input.addEventListener('blur', () => {
+  const value = input.value.trim();
+
+  if (value === '') {
+    input.style.outline = '3px solid red';
+  } else {
+    input.style.outline = '3px solid lime';
+  }
+});
+
+// 4 - submit event
+form.addEventListener('submit', handleSubmit);
+
+function checkInput() {
+  const value = input.value.trim();
+
+  // Клас success / error
+  if (value.length >= 6) {
+    input.classList.add('success');
+    input.classList.remove('error');
+  } else {
+    input.classList.add('error');
+    input.classList.remove('success');
+  }
+
+  // Outline при focus
+  if (document.activeElement === input) {
+    input.style.outline = value === '' ? '3px solid red' : '3px solid green';
+  }
+
+  // Оновлення span
+  if (value === '') {
+    span.textContent = 'Anonymous';
+  } else {
+    span.textContent = value;
+  }
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const userName = input.value.trim();
+  const isChecked = checkbox.checked;
+
+  if (userName !== '' && isChecked) {
+    const userData = {
+      userName,
+    };
+    console.log('✅ Дані користувача:', userData);
+  } else {
+    console.warn('⚠️ Введіть ім’я і підтвердіть згоду');
+  }
+
+  // Очистка форми
+  input.value = '';
+  checkbox.checked = false;
+  span.textContent = 'Anonymous';
+  input.classList.remove('success', 'error');
+  input.style.outline = 'none';
+}
+  */
 
 // 2 - При події `focus` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
@@ -128,7 +277,7 @@ function checkInputValue() {
 // При відправці форми, очисти інпут, верни чек бокс у положення
 // false, верни дефолтне значення "Anonymous" у span.
 
-const form = document.querySelector('.js-contact-form');
+/*const form = document.querySelector('.js-contact-form');
 
 form.addEventListener('submit', onFormSabmit);
 function onFormSabmit(event) {
@@ -154,9 +303,37 @@ inputName.addEventListener('input', () => {
   const value = inputName.value.trim();
   outputName.textContent = value === '' ? 'Anonymous' : value;
 });
+*/
 
 //Завдання 4:
 
 // Використовуй шаблон розмітки з файлу html та напиши наступний функціонал:
 // При кліку на кнопку "Зменшити" квадрат стає меньшим на 20 пікселів,
 // При кліку на кнопку "Збільшити" - квадрат стає більшим на 20 пікселів.
+const small = document.querySelector('.js-decrease');
+const big = document.querySelector('.js-increase');
+const square = document.querySelector('.box');
+small.addEventListener('click', decreaseSquare);
+big.addEventListener('click', increaseSquare);
+
+// Отримуємо поточну ширину і висоту (як числа)
+function getSize(el) {
+  return {
+    width: el.offsetWidth,
+    height: el.offsetHeight,
+  };
+}
+
+// Зменшити квадрат
+function decreaseSquare() {
+  const { width, height } = getSize(square);
+  square.style.width = `${width - 20}px`;
+  square.style.height = `${height - 20}px`;
+}
+
+// Збільшити квадрат
+function increaseSquare() {
+  const { width, height } = getSize(square);
+  square.style.width = `${width + 20}px`;
+  square.style.height = `${height + 20}px`;
+}

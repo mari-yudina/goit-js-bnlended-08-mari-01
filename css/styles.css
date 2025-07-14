@@ -113,3 +113,10 @@ span {
 .active {
   color: red;
 }
+
+.even {
+  background-color: green;
+}
+.odd {
+  background-color: yellow;
+}
